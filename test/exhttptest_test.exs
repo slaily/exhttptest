@@ -1,8 +1,8 @@
-defmodule ExhttptestTest do
+defmodule ExHTTPTestTest do
   use ExUnit.Case
-  doctest Exhttptest
+  doctest ExHTTPTest
 
   test "execute the test cases" do
-    assert Exhttptest.execute() == :executing
+    assert ExHTTPTest.execute() == :executing
   end
 end

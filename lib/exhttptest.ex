@@ -1,6 +1,6 @@
-defmodule Exhttptest do
+defmodule ExHTTPTest do
   @moduledoc """
-  Documentation for Exhttptest.
+  Documentation for ExHTTPTest.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Exhttptest do
 
   ## Examples
 
-      iex> Exhttptest.execute()
+      iex> ExHTTPTest.execute()
       :executing
 
   """
