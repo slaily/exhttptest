@@ -1,0 +1,9 @@
+{
+  "name": "TEST: Create an HTML bin",
+  "verb": "POST",
+  "endpoint": "post",
+  "host": "https://httpbin.org",
+  "payload": {
+    "hello": "world!",
+  }
+}
