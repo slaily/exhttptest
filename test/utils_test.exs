@@ -22,4 +22,10 @@ defmodule UtilsTest do
 
     assert {response, reason} == {:unsupported, :file_ext}
   end
+
+  test "Reading a .json file that doesn't exist" do
+    {response, reason} = Utils.read_file("assets/dummy.json")
+
+    assert {response, reason} == {:error, :enoent}
+  end
 end
