@@ -10,4 +10,16 @@ defmodule UtilsTest do
   test "Not supported file extension format" do
     assert Utils.file_ext_supported?("dummy.txt") == false
   end
+
+  test "Reading a .json file" do
+    {response, _} = Utils.read_file("assets/HTTP_GET.json")
+
+    assert response == :ok
+  end
+
+  test "Reading a .txt file" do
+    {response, reason} = Utils.read_file("assets/dummy.txt")
+
+    assert {response, reason} == {:unsupported, :file_ext}
+  end
 end
