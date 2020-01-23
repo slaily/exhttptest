@@ -14,7 +14,7 @@ defmodule DecoderTest do
 
   test "Try to decode broken content from a .json file" do
     # The passed tuple as a function argument simulates File.read(...)
-    {response, cnt} = Decoder.decode_content_from_json_file(
+    {response, _} = Decoder.decode_content_from_json_file(
       {:ok, ~s({"key"; "value"})}
     )
 
