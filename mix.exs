@@ -22,7 +22,8 @@ defmodule ExHTTPTest.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:jason, "~> 1.1"}
+      {:jason, "~> 1.1"},
+      {:ex_json_schema, "~> 0.7.3"}
     ]
   end
 

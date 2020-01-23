@@ -1,3 +1,4 @@
 %{
+  "ex_json_schema": {:hex, :ex_json_schema, "0.7.3", "3289bf2edf57eb1ae0d5af35bc6d6c37d7e6d935f72e0120c7f0704510956049", [:mix], [], "hexpm"},
   "jason": {:hex, :jason, "1.1.2", "b03dedea67a99223a2eaf9f1264ce37154564de899fd3d8b9a21b1a6fd64afe7", [:mix], [{:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm"},
 }
