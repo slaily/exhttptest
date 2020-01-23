@@ -1,21 +1,12 @@
-# exhttptest
+exhttptest: HTTP tests over RESTful APIs✨
+==========================================
 
-**TODO: Add description**
+Pissed about writing test scripts against your RESTFul APIs anytime?
 
-## Installation
+Describe an HTTP Requests test cases in a simplest and widely used format JSON within a file.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `exhttptest` to your list of dependencies in `mix.exs`:
+Run one command and gain a summary report.
 
-```elixir
-def deps do
-  [
-    {:exhttptest, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/exhttptest](https://hexdocs.pm/exhttptest).
-
+-------------
+# Coming soon
+-------------
