@@ -34,4 +34,10 @@ defmodule UtilsTest do
 
     assert url == "http://localhost:8080/users"
   end
+
+  test "Does the URI is valid?" do
+    {response, _} = Utils.validate_uri("localhost:8080/users")
+
+    assert response == :error
+  end
 end
