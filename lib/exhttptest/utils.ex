@@ -26,4 +26,15 @@ defmodule ExHTTPTest.Utils do
         nil
     end
   end
+
+  def validate_uri(uri) do
+    parsed_uri = URI.parse(uri)
+
+    case parsed_uri do
+      %URI{scheme: nil} -> {:error, uri}
+      %URI{host: nil} -> {:error, uri}
+      %URI{path: nil} -> {:error, uri}
+      _ -> {:ok, uri}
+    end
+  end
 end
