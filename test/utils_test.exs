@@ -28,4 +28,10 @@ defmodule UtilsTest do
 
     assert {response, reason} == {:error, :enoent}
   end
+
+  test "Prepare an URL by providing the host and endpoint" do
+    url = Utils.prepare_url("http://localhost:8080", "/users")
+
+    assert url == "http://localhost:8080/users"
+  end
 end
