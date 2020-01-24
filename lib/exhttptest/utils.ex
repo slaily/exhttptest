@@ -9,4 +9,21 @@ defmodule ExHTTPTest.Utils do
       false -> {:unsupported, :file_ext}
     end
   end
+
+  def prepare_url(host, endpoint) do
+    cond do
+      host == "" ->
+        nil
+      String.last(host) != "/" and String.first(endpoint) != "/" ->
+        "#{host}/#{endpoint}"
+      String.last(host) == "/" and String.first(endpoint) != "/" ->
+        host <> endpoint
+      String.last(host) != "/" and String.first(endpoint) == "/" ->
+        host <> endpoint
+      String.last(host) == "/" and String.first(endpoint) == "/" ->
+        host <> String.slice(endpoint, 1..-1)
+      true ->
+        nil
+    end
+  end
 end
