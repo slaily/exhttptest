@@ -23,7 +23,8 @@ defmodule ExHTTPTest.MixProject do
   defp deps do
     [
       {:jason, "~> 1.1"},
-      {:ex_json_schema, "~> 0.7.3"}
+      {:ex_json_schema, "~> 0.7.3"},
+      {:httpoison, "~> 1.6"}
     ]
   end
 
