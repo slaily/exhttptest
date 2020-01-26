@@ -40,4 +40,19 @@ defmodule UtilsTest do
 
     assert response == :error
   end
+
+  test "Construct map with arguments for an HTTP Request" do
+    map = %{
+      "endpoint" => "users",
+      "headers" => %{"Accept-Language" => "en-US"},
+      "host" => "http://localhost:8080",
+      "name" => "TEST: List all users",
+      "query_string" => %{"limit" => 5},
+      "verb" => "GET"
+    }
+
+    map = Utils.construct_http_request_map(map)
+
+    assert Map.has_key?(map, :verb)
+  end
 end
