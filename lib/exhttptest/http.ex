@@ -8,5 +8,7 @@ defmodule ExHTTPTest.HTTP do
     end
   end
 
-  def request(args), do: nil
+  defp request(%{:verb => "GET", :url => url, :headers => headers, :query_string => query_params}) do
+    HTTPoison.get(url, headers, params: query_params)
+  end
 end
