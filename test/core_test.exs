@@ -22,4 +22,18 @@ defmodule CoreTest do
 
     assert response == :valid
   end
+
+  test "Prepare arguments for an HTTP Request" do
+    args = %{
+      "endpoint" => "users",
+      "headers" => %{"Accept-Language" => "en-US"},
+      "host" => "http://localhost:8080",
+      "name" => "TEST: List all users",
+      "query_string" => %{"limit" => 5},
+      "verb" => "GET"
+    }
+    http_request_map = Core.prepare_http_request_args({:valid, args})
+
+    assert Map.has_key?(http_request_map, :url)
+  end
 end
