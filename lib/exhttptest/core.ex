@@ -2,6 +2,7 @@ defmodule ExHTTPTest.Core do
   alias ExHTTPTest.Utils
   alias ExHTTPTest.Decoder
   alias ExHTTPTest.Validator
+  alias ExHTTPTest.HTTP
 
   def load_content_from_json_file(file_path) do
     file_path
@@ -35,9 +36,15 @@ defmodule ExHTTPTest.Core do
       {:ok, url} ->
         Map.put(content, "url", url) |> Utils.construct_http_request_map()
       {:error, _} ->
-        nil
+        {:error, "An URL validation error."}
     end
   end
 
   def prepare_http_request_args(args), do: args
+
+  def send_http_request(args) do
+    HTTP.method_dispatcher(args)
+  end
+
+  def send_http_request(args), do: args
 end
