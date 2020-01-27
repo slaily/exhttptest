@@ -4,7 +4,7 @@ defmodule HTTPTest do
   alias ExHTTPTest.HTTP
 
   test "Dispatching an HTTP Request to the appropriate handler" do
-    {response, _} = HTTP.method_dispatcher(%{:verb => "GET"})
+    {response, _} = HTTP.method_dispatcher(%{:verb => "HEAD"})
 
     assert response == :unsupported
   end
