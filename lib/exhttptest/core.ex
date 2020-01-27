@@ -42,8 +42,8 @@ defmodule ExHTTPTest.Core do
 
   def prepare_http_request_args(args), do: args
 
-  def send_http_request(args) do
-    HTTP.method_dispatcher(args)
+  def send_http_request({:request, map}) do
+    HTTP.method_dispatcher(map)
   end
 
   def send_http_request(args), do: args
