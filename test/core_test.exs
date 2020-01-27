@@ -32,13 +32,13 @@ defmodule CoreTest do
       "query_string" => %{"limit" => 5},
       "verb" => "GET"
     }
-    http_request_map = Core.prepare_http_request_args({:valid, args})
+    {_, http_request_map} = Core.prepare_http_request_args({:valid, args})
 
     assert Map.has_key?(http_request_map, :url)
   end
 
   test "Send an HTTP Request, which is not supported" do
-    {response, _} = Core.send_http_request(%{:verb => "HEAD"})
+    {response, _} = Core.send_http_request({:request, %{:verb => "HEAD"}})
 
     assert response == :unsupported
   end
