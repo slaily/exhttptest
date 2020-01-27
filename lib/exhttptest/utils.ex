@@ -39,8 +39,11 @@ defmodule ExHTTPTest.Utils do
   end
 
   def construct_http_request_map(map) when is_map(map) do
-    map
-    |> Map.drop(["host", "endpoint"])
-    |> Map.new(fn {key, value} -> {String.to_atom(key), value} end)
+    new_map =
+      map
+      |> Map.drop(["host", "endpoint"])
+      |> Map.new(fn {key, value} -> {String.to_atom(key), value} end)
+
+    {:request, new_map}
   end
 end
