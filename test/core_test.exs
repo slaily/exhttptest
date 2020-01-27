@@ -36,4 +36,10 @@ defmodule CoreTest do
 
     assert Map.has_key?(http_request_map, :url)
   end
+
+  test "Send an HTTP Request, which is not supported" do
+    {response, _} = Core.send_http_request(%{:verb => "HEAD"})
+
+    assert response == :unsupported
+  end
 end
