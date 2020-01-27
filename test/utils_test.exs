@@ -51,8 +51,8 @@ defmodule UtilsTest do
       "verb" => "GET"
     }
 
-    map = Utils.construct_http_request_map(map)
+    {_, new_map} = Utils.construct_http_request_map(map)
 
-    assert Map.has_key?(map, :verb)
+    assert Map.has_key?(new_map, :verb)
   end
 end
