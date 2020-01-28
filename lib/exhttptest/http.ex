@@ -7,7 +7,9 @@ defmodule ExHTTPTest.HTTP do
     end
   end
 
-  defp request(%{:verb => "GET", :url => url, :headers => headers, :query_string => query_params}) do
-    HTTPoison.get(url, headers, params: query_params)
+  defp request(%{:verb => "GET", :url => url, :headers => headers, :query_string => query_params, :name => test_name}) do
+    response = HTTPoison.get(url, headers, params: query_params)
+
+    Tuple.append(response, test_name)
   end
 end
