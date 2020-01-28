@@ -15,7 +15,7 @@ defmodule ExHTTPTest.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :table_rex]
     ]
   end
 
@@ -24,7 +24,8 @@ defmodule ExHTTPTest.MixProject do
     [
       {:jason, "~> 1.1"},
       {:ex_json_schema, "~> 0.7.3"},
-      {:httpoison, "~> 1.6"}
+      {:httpoison, "~> 1.6"},
+      {:table_rex, "~> 2.0"}
     ]
   end
 
