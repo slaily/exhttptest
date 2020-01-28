@@ -47,4 +47,12 @@ defmodule ExHTTPTest.Core do
   end
 
   def send_http_request(args), do: args
+
+  def extract_http_response({:ok, %HTTPoison.Response{status_code: status_code}, test_name}) do
+    [{:test_name, test_name}, {:status_code, status_code}]
+  end
+
+  def extract_http_response({:error, %HTTPoison.Error{reason: reason}, test_name}) do
+    [{:test_name, test_name}, {:reason, reason}]
+  end
 end
