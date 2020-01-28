@@ -42,4 +42,10 @@ defmodule CoreTest do
 
     assert response == :unsupported
   end
+
+  test "Extract an HTTP Response" do
+    response = Core.extract_http_response({:ok, %HTTPoison.Response{status_code: 200}, "Test: Mock an HTTP Request"})
+
+    assert response[:status_code] == 200
+  end
 end
