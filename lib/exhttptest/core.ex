@@ -55,4 +55,8 @@ defmodule ExHTTPTest.Core do
   def extract_http_response({:error, %HTTPoison.Error{reason: reason}, test_name}) do
     [{:test_name, test_name}, {:reason, reason}]
   end
+
+  def transform_data_in_tabular_str(data) do
+    TableRex.quick_render!([Keyword.values(data)], ["Test name", "HTTP Status Code"])
+  end
 end
